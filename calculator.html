@@ -1,0 +1,46 @@
+<html>
+    <title>Calculator</title>
+    <body>
+        <h1>Simple calculator</h1>
+        <table>
+            <tr>
+                <td colspan ="3"><input type="text" id="display" disabled></td>
+                <td> <input type ="button", onclick="clearr()" value="C"></td>
+            </tr>
+            <tr>
+                <td> <input type="button", onclick="appendValue('7')" value="7"></td>
+                <td> <input type="button", onclick="appendValue('8')" value="8"></td>
+                <td> <input type="button", onclick="appendValue('9')" value="9"></td>
+                <td rowspan ="2"><input type="button", onclick="appendValue('+')" value="+"></td>
+            </tr>
+            <tr>
+                <td> <input type="button", onclick="appendValue('4')" value="4"></td>
+                <td> <input type="button", onclick="appendValue('5')" value="5"></td>
+                <td> <input type="button", onclick="appendValue('6')" value="6"></td>
+            </tr>
+            <tr>
+                <td> <input type="button", onclick="appendValue('1')" value="1"></td>
+                <td> <input type="button", onclick="appendValue('2')" value="2"></td>
+                <td> <input type="button", onclick="appendValue('3')" value="3"></td>
+                <td> <input type="button", onclick="appendValue('*')" value="*"></td>
+            </tr>
+            <tr>
+                <td> <input type="button", onclick="appendValue('0')" value="0"></td>
+                <td> <input type="button", onclick="appendValue('/')" value="/"></td>
+                <td> <input type="button", onclick="appendValue('-')" value="-"></td>
+                <td> <input type="button", onclick="calculate()" value="="></td>
+            </tr>
+            <script>
+                function appendValue(value){
+                    document.getElementById('display').value += value
+                }
+                function calculate(){
+                    document.getElementById('display').value = eval(document.getElementById('display').value)
+                }
+                function clearr(){
+                    document.getElementById('display').value = ""
+                }
+            </script>
+        </table>
+    </body>
+</html>
